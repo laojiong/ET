@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
+using BM;
 using UnityEngine;
 
 namespace ET.Client
@@ -54,16 +55,21 @@ namespace ET.Client
             }
             else
             {
-                using (Root.Instance.Scene.AddComponent<ResourcesComponent>())
+                // using (Root.Instance.Scene.AddComponent<ResourcesComponent>())
+                // {
+                    // const string configBundleName = "config.unity3d";
+                    // ResourcesComponent.Instance.LoadBundle(configBundleName);
+                    //
+                    // foreach (Type configType in configTypes)
+                    // {
+                    //     TextAsset v = ResourcesComponent.Instance.GetAsset(configBundleName, configType.Name) as TextAsset;
+                    //     output[configType] = v.bytes;
+                    // }
+                // }
+                foreach (Type configType in configTypes)
                 {
-                    const string configBundleName = "config.unity3d";
-                    ResourcesComponent.Instance.LoadBundle(configBundleName);
-                    
-                    foreach (Type configType in configTypes)
-                    {
-                        TextAsset v = ResourcesComponent.Instance.GetAsset(configBundleName, configType.Name) as TextAsset;
-                        output[configType] = v.bytes;
-                    }
+                    TextAsset v = AssetComponent.Load<TextAsset>($"Assets/Bundles/Config/{configType.Name}.bytes");
+                    output[configType] = v.bytes;
                 }
             }
 

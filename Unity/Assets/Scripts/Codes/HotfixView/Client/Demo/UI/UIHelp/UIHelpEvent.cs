@@ -1,4 +1,5 @@
 ﻿using System;
+using BM;
 using UnityEngine;
 
 namespace ET.Client
@@ -10,8 +11,9 @@ namespace ET.Client
         {
 	        try
 	        {
-		        await uiComponent.DomainScene().GetComponent<ResourcesLoaderComponent>().LoadAsync(UIType.UIHelp.StringToAB());
-		        GameObject bundleGameObject = (GameObject) ResourcesComponent.Instance.GetAsset(UIType.UIHelp.StringToAB(), UIType.UIHelp);
+		        // await uiComponent.DomainScene().GetComponent<ResourcesLoaderComponent>().LoadAsync(UIType.UIHelp.StringToAB());
+		        // GameObject bundleGameObject = (GameObject) ResourcesComponent.Instance.GetAsset(UIType.UIHelp.StringToAB(), UIType.UIHelp);
+		        GameObject bundleGameObject = await AssetComponent.LoadAsync<GameObject>(BPath.Assets_Bundles_UI_UIHelp__prefab);
 		        GameObject gameObject = UnityEngine.Object.Instantiate(bundleGameObject, UIEventComponent.Instance.GetLayer((int)uiLayer));
 		        UI ui = uiComponent.AddChild<UI, string, GameObject>(UIType.UIHelp, gameObject);
 

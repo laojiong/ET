@@ -1,5 +1,6 @@
 using System;
 using System.IO;
+using BM;
 
 namespace ET.Client
 {
@@ -9,11 +10,13 @@ namespace ET.Client
         protected override async ETTask Run(Scene scene, ET.EventType.EntryEvent3 args)
         {
             // 加载配置
-            Root.Instance.Scene.AddComponent<ResourcesComponent>();
-            
+            // Root.Instance.Scene.AddComponent<ResourcesComponent>();
+            AssetComponentConfig.DefaultBundlePackageName = "AllBundle";
+            await AssetComponent.Initialize("AllBundle");
             Root.Instance.Scene.AddComponent<GlobalComponent>();
 
-            await ResourcesComponent.Instance.LoadBundleAsync("unit.unity3d");
+            // await ResourcesComponent.Instance.LoadBundleAsync("unit.unity3d");
+            await AssetComponent.LoadAsync(BPath.Assets_Bundles_Unit_Unit__prefab);
             
             Scene clientScene = await SceneFactory.CreateClientScene(1, "Game");
             

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Threading;
+using BM;
 using CommandLine;
 using UnityEngine;
 
@@ -39,12 +40,13 @@ namespace ET
 			Game.AddSingleton<CoroutineLockComponent>();
 			
 			ETTask.ExceptionHandler += Log.Error;
-
+			
 			Game.AddSingleton<CodeLoader>().Start();
 		}
 
 		private void Update()
 		{
+			AssetComponent.Update();
 			Game.Update();
 		}
 

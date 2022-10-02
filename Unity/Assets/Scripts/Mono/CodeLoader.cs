@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Reflection;
+using BM;
 using UnityEngine;
 
 namespace ET
@@ -40,9 +41,11 @@ namespace ET
 				byte[] pdbBytes;
 				if (!Define.IsEditor)
 				{
-					Dictionary<string, UnityEngine.Object> dictionary = AssetsBundleHelper.LoadBundle("code.unity3d");
-					assBytes = ((TextAsset)dictionary["Model.dll"]).bytes;
-					pdbBytes = ((TextAsset)dictionary["Model.pdb"]).bytes;
+					// Dictionary<string, UnityEngine.Object> dictionary = AssetsBundleHelper.LoadBundle("code.unity3d");
+					// assBytes = ((TextAsset)dictionary["Model.dll"]).bytes;
+					// pdbBytes = ((TextAsset)dictionary["Model.pdb"]).bytes;
+					assBytes = AssetComponent.Load<TextAsset>("Bundles/Codes/Model.dll.bytes").bytes;
+					pdbBytes = AssetComponent.Load<TextAsset>("Bundles/Codes/Model.pdb.bytes").bytes;
 				}
 				else
 				{
@@ -65,9 +68,11 @@ namespace ET
 			byte[] pdbBytes;
 			if (!Define.IsEditor)
 			{
-				Dictionary<string, UnityEngine.Object> dictionary = AssetsBundleHelper.LoadBundle("code.unity3d");
-				assBytes = ((TextAsset)dictionary["Hotfix.dll"]).bytes;
-				pdbBytes = ((TextAsset)dictionary["Hotfix.pdb"]).bytes;
+				// Dictionary<string, UnityEngine.Object> dictionary = AssetsBundleHelper.LoadBundle("code.unity3d");
+				// assBytes = ((TextAsset)dictionary["Hotfix.dll"]).bytes;
+				// pdbBytes = ((TextAsset)dictionary["Hotfix.pdb"]).bytes;
+				assBytes = AssetComponent.Load<TextAsset>("Bundles/Codes/Hotfix.dll.bytes").bytes;
+				pdbBytes = AssetComponent.Load<TextAsset>("Bundles/Codes/Hotfix.pdb.bytes").bytes;
 			}
 			else
 			{

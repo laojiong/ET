@@ -41,6 +41,13 @@ namespace ET
 			
 			ETTask.ExceptionHandler += Log.Error;
 			
+			this.LoadCode().Coroutine();
+		}
+
+		async ETTask LoadCode()
+		{
+			AssetComponentConfig.DefaultBundlePackageName = "AllBundle";
+			await AssetComponent.Initialize("AllBundle");
 			Game.AddSingleton<CodeLoader>().Start();
 		}
 

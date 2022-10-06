@@ -11,8 +11,6 @@ namespace ET.Client
         {
             // 加载配置
             // Root.Instance.Scene.AddComponent<ResourcesComponent>();
-            AssetComponentConfig.DefaultBundlePackageName = "AllBundle";
-            await AssetComponent.Initialize("AllBundle");
             Root.Instance.Scene.AddComponent<GlobalComponent>();
 
             // await ResourcesComponent.Instance.LoadBundleAsync("unit.unity3d");

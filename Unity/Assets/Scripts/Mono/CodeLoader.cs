@@ -44,8 +44,8 @@ namespace ET
 					// Dictionary<string, UnityEngine.Object> dictionary = AssetsBundleHelper.LoadBundle("code.unity3d");
 					// assBytes = ((TextAsset)dictionary["Model.dll"]).bytes;
 					// pdbBytes = ((TextAsset)dictionary["Model.pdb"]).bytes;
-					assBytes = AssetComponent.Load<TextAsset>("Bundles/Codes/Model.dll.bytes").bytes;
-					pdbBytes = AssetComponent.Load<TextAsset>("Bundles/Codes/Model.pdb.bytes").bytes;
+					assBytes = AssetComponent.Load<TextAsset>("Assets/Bundles/Code/Model.dll.bytes").bytes;
+					pdbBytes = AssetComponent.Load<TextAsset>("Assets/Bundles/Code/Model.pdb.bytes").bytes;
 				}
 				else
 				{
@@ -71,8 +71,8 @@ namespace ET
 				// Dictionary<string, UnityEngine.Object> dictionary = AssetsBundleHelper.LoadBundle("code.unity3d");
 				// assBytes = ((TextAsset)dictionary["Hotfix.dll"]).bytes;
 				// pdbBytes = ((TextAsset)dictionary["Hotfix.pdb"]).bytes;
-				assBytes = AssetComponent.Load<TextAsset>("Bundles/Codes/Hotfix.dll.bytes").bytes;
-				pdbBytes = AssetComponent.Load<TextAsset>("Bundles/Codes/Hotfix.pdb.bytes").bytes;
+				assBytes = AssetComponent.Load<TextAsset>("Assets/Bundles/Code/Hotfix.dll.bytes").bytes;
+				pdbBytes = AssetComponent.Load<TextAsset>("Assets/Bundles/Code/Hotfix.pdb.bytes").bytes;
 			}
 			else
 			{

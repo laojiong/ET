@@ -4,3 +4,6 @@
 /Unity.sln.DotSettings.user
 /BuildBundles
 /EncryptAssets
+/HybridCLR.Runtime.csproj
+/HybridCLR.Editor.csproj
+/HybridCLRData

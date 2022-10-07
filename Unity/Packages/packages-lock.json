@@ -1,5 +1,11 @@
 {
   "dependencies": {
+    "com.focus-creative-games.hybridclr_unity": {
+      "version": "file:../hybridclr_unity",
+      "depth": 0,
+      "source": "local",
+      "dependencies": {}
+    },
     "com.unity.burst": {
       "version": "1.6.6",
       "depth": 1,

@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07c703acbe1762949bb8458a336f36bb, type: 3}
   m_Name: BMConfig
   m_EditorClassIdentifier: 
-  AssetLoadMode: 0
+  AssetLoadMode: 2
   MaxDownLoadCount: 8
   ReDownLoadCount: 3

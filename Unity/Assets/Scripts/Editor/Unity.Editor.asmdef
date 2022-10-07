@@ -5,7 +5,8 @@
         "Unity.Mono",
         "Unity.ThirdParty",
         "Unity.Core",
-        "Unity.Codes"
+        "Unity.Codes",
+        "HybridCLR.Editor"
     ],
     "includePlatforms": [
         "Editor"
